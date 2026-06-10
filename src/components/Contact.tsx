@@ -23,7 +23,7 @@ const contacts = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-slate-900/50 px-6 py-24">
+    <section id="contact" className="bg-slate-900/30 px-6 py-24 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl">
         <div className="rounded-3xl border border-white/10 bg-slate-950/80 p-8 shadow-2xl shadow-cyan-950/20 md:p-12">
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
