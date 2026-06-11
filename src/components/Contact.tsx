@@ -1,25 +1,36 @@
 import Reveal from "@/components/Reveal";
+import {
+  Code2,
+  BriefcaseBusiness,
+  Mail,
+  MessageCircle,
+  Download,
+} from "lucide-react";
 
 const contacts = [
   {
     title: "Email",
     value: "almarufkalvin72@gmail.com",
     link: "mailto:almarufkalvin72@gmail.com",
+    icon: Mail,
   },
   {
     title: "WhatsApp",
     value: "Hubungi melalui WhatsApp",
     link: "https://wa.me/6282250526055",
+    icon: MessageCircle,
   },
   {
     title: "GitHub",
     value: "Lihat repository saya",
     link: "https://github.com/almarufkalvin72",
+    icon: Code2,
   },
   {
     title: "LinkedIn",
     value: "Terhubung di LinkedIn",
     link: "https://www.linkedin.com/in/kalvinalmaruff",
+    icon: BriefcaseBusiness,
   },
 ];
 
@@ -48,54 +59,66 @@ export default function Contact() {
                   Tertarik bekerja sama atau ingin terhubung?
                 </h2>
 
-                <p className="mt-5 leading-7 text-slate-400">
-                  Saya terbuka untuk kesempatan belajar, kolaborasi project,
-                  magang, freelance, atau pekerjaan di bidang web development
-                  dan sistem informasi.
-                </p>
+                <p className="mt-5 text-justify leading-7 text-slate-400">
+  Saya terbuka untuk berbagai peluang profesional, seperti magang, freelance,
+  kolaborasi project, maupun pekerjaan di bidang web development, aplikasi
+  digital, dan sistem informasi.
+</p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a
                     href="mailto:almarufkalvin72@gmail.com"
-                    className="inline-flex rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:-translate-y-1 hover:bg-cyan-300"
+                    className="inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-400/20 transition hover:-translate-y-1 hover:bg-cyan-300"
                   >
+                    <Mail size={18} />
                     Kirim Email
                   </a>
 
                   <a
                     href="/cv-kalvin.pdf"
                     download
-                    className="inline-flex rounded-xl border border-cyan-400/70 px-6 py-3 text-sm font-semibold text-cyan-300 transition hover:-translate-y-1 hover:bg-cyan-400 hover:text-slate-950"
+                    className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/70 px-6 py-3 text-sm font-semibold text-cyan-300 transition hover:-translate-y-1 hover:bg-cyan-400 hover:text-slate-950"
                   >
+                    <Download size={18} />
                     Download CV
                   </a>
                 </div>
               </div>
 
               <div className="grid gap-4">
-                {contacts.map((contact, index) => (
-                  <Reveal key={contact.title} delay={index * 0.08}>
-                    <a
-                      href={contact.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-cyan-400/10"
-                    >
-                      <div>
-                        <p className="text-sm font-semibold text-cyan-300">
-                          {contact.title}
-                        </p>
-                        <p className="mt-2 text-slate-300 transition group-hover:text-white">
-                          {contact.value}
-                        </p>
-                      </div>
+                {contacts.map((contact, index) => {
+                  const Icon = contact.icon;
 
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-slate-950/70 text-cyan-300 transition group-hover:border-cyan-400/50 group-hover:bg-cyan-400 group-hover:text-slate-950">
-                        →
-                      </span>
-                    </a>
-                  </Reveal>
-                ))}
+                  return (
+                    <Reveal key={contact.title} delay={index * 0.08}>
+                      <a
+                        href={contact.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-cyan-400/10"
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 transition group-hover:bg-cyan-400 group-hover:text-slate-950">
+                            <Icon size={22} />
+                          </div>
+
+                          <div>
+                            <p className="text-sm font-semibold text-cyan-300">
+                              {contact.title}
+                            </p>
+                            <p className="mt-2 text-slate-300 transition group-hover:text-white">
+                              {contact.value}
+                            </p>
+                          </div>
+                        </div>
+
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-slate-950/70 text-cyan-300 transition group-hover:border-cyan-400/50 group-hover:bg-cyan-400 group-hover:text-slate-950">
+                          →
+                        </span>
+                      </a>
+                    </Reveal>
+                  );
+                })}
               </div>
             </div>
           </div>

@@ -4,17 +4,17 @@ const focusItems = [
   {
     title: "Frontend Development",
     description:
-      "Membuat tampilan website yang responsive, rapi, interaktif, dan mudah digunakan oleh pengguna.",
+      "Berfokus pada pengembangan tampilan website yang responsif, menarik,interaktif, dan memberikan pengalaman penggunaan yang nyaman.",
   },
   {
     title: "Modern Web Technology",
     description:
-      "Mempelajari Next.js, React, TypeScript, dan Tailwind CSS untuk membangun website modern.",
+      "Mendalami penggunaan Next.js, React, TypeScript, dan Tailwind CSS untuk membangun website modern yang responsif, terstruktur, dan mudah dikembangkan.",
   },
   {
     title: "Project Based Learning",
     description:
-      "Mengembangkan kemampuan melalui praktik langsung dan pembuatan project nyata.",
+      "Mengembangkan kemampuan melalui praktik langsung, eksplorasi teknologi, dan pembuatan project nyata yang relevan dengan kebutuhan pengguna.",
   },
 ];
 
@@ -29,24 +29,22 @@ export default function About() {
             </p>
 
             <h2 className="text-3xl font-extrabold leading-tight text-white md:text-4xl">
-              Lulusan Informatika yang sedang membangun karier di bidang web
-              development.
+              Lulusan Informatika yang berfokus pada pengembangan website modern dan sistem informasi.
             </h2>
 
-            <p className="mt-6 leading-7 text-slate-400">
-              Saya adalah Kalvin Al Ma&apos;ruf, lulusan Informatika yang
-              memiliki minat dalam pengembangan website, aplikasi, dan sistem
-              informasi. Saat ini saya sedang memperdalam kemampuan dalam
-              membangun website modern menggunakan Next.js, React, dan Tailwind
-              CSS.
-            </p>
+          <p className="mt-6 text-justify leading-7 text-slate-400">
+  Saya Kalvin Al Ma&apos;ruf, lulusan Informatika yang memiliki minat dalam
+  pengembangan website, aplikasi digital, dan sistem informasi. Saya terus
+  mengembangkan kemampuan dalam membangun website modern menggunakan Next.js,
+  React, TypeScript, dan Tailwind CSS.
+</p>
 
-            <p className="mt-4 leading-7 text-slate-400">
-              Web portofolio ini saya buat sebagai media belajar sekaligus
-              tempat untuk menampilkan project, kemampuan, dan pengalaman yang
-              terus saya kembangkan. Saya percaya bahwa belajar melalui praktik
-              langsung adalah cara terbaik untuk memahami dunia web development.
-            </p>
+<p className="mt-4 text-justify leading-7 text-slate-400">
+  Portofolio ini saya buat sebagai media untuk menampilkan project, kemampuan,
+  dan pengalaman yang telah saya kembangkan melalui proses belajar serta praktik
+  langsung. Bagi saya, membangun project nyata merupakan salah satu cara terbaik
+  untuk meningkatkan pemahaman dan keterampilan di bidang web development.
+</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               {["Fresh Graduate", "Web Development", "Informatika"].map(

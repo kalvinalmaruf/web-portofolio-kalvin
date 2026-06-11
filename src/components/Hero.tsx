@@ -40,22 +40,22 @@ export default function Hero() {
               Lulusan Informatika
             </h2>
 
-            <p className="mt-2 text-base font-medium text-cyan-300 md:text-xl">
+            <p className="text-2x1 font-semibold text-cyan-300 md:text-3xl">
               Universitas Teknologi Yogyakarta
             </p>
           </motion.div>
 
-          <motion.p
-            className="mt-6 max-w-xl leading-7 text-slate-400"
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
-            Saya sedang mengembangkan kemampuan dalam pembuatan website modern
-            menggunakan Next.js, React, dan Tailwind CSS. Portofolio ini dibuat
-            sebagai media belajar sekaligus tempat menampilkan project yang
-            pernah saya kerjakan.
-          </motion.p>
+         <motion.p
+  className="mt-6 max-w-xl text-justify leading-7 text-slate-400"
+  initial={{ opacity: 0, y: 25 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.4 }}
+>
+  Saya memiliki minat dalam pengembangan website modern dengan menggunakan
+  teknologi seperti Next.js, React, dan Tailwind CSS. Portofolio ini saya buat
+  sebagai media untuk menampilkan kemampuan, pengalaman, serta project yang telah
+  saya kerjakan dalam bidang web development dan sistem informasi.
+</motion.p>
 
           <motion.div
             className="mt-8 flex flex-wrap gap-4"

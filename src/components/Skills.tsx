@@ -1,25 +1,73 @@
 import Reveal from "@/components/Reveal";
+import type { IconType } from "react-icons";
+import {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiMongodb,
+  SiGit,
+  SiGithub,
+  SiNpm,
+  SiFigma,
+} from "react-icons/si";
+import { FiMonitor, FiCode } from "react-icons/fi";
 
-const skillCategories = [
+type Skill = {
+  name: string;
+  icon: IconType;
+};
+
+type SkillCategory = {
+  title: string;
+  description: string;
+  skills: Skill[];
+};
+
+const skillCategories: SkillCategory[] = [
   {
     title: "Frontend",
     description: "Teknologi untuk membangun tampilan website.",
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js"],
+    skills: [
+      { name: "HTML", icon: SiHtml5 },
+      { name: "CSS", icon: SiCss },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "React", icon: SiReact },
+      { name: "Next.js", icon: SiNextdotjs },
+    ],
   },
   {
     title: "Styling",
-    description: "Teknologi untuk membuat tampilan lebih rapi dan responsive.",
-    skills: ["Tailwind CSS", "Responsive Design", "UI Design"],
+    description: "Teknologi untuk membuat tampilan lebih rapi dan responsif.",
+    skills: [
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Responsive Design", icon: FiMonitor },
+      { name: "UI Design", icon: SiFigma },
+    ],
   },
   {
     title: "Backend & Database",
     description: "Dasar pengembangan server dan pengelolaan data.",
-    skills: ["Node.js", "MongoDB", "REST API"],
+    skills: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "REST API", icon: FiCode },
+    ],
   },
   {
     title: "Tools",
     description: "Tools yang digunakan dalam proses pengembangan.",
-    skills: ["Git", "GitHub", "VS Code", "npm"],
+    skills: [
+      { name: "Git", icon: SiGit },
+      { name: "GitHub", icon: SiGithub },
+      { name: "VS Code", icon: FiCode },
+      { name: "npm", icon: SiNpm },
+    ],
   },
 ];
 
@@ -43,7 +91,7 @@ export default function Skills() {
               Teknologi yang sedang saya pelajari dan gunakan
             </h2>
 
-            <p className="mt-4 leading-7 text-slate-400">
+            <p className="mt-4 text-left leading-7 text-slate-400 md:text-justify">
               Berikut beberapa teknologi dan tools yang saya gunakan dalam
               proses belajar serta pengembangan project. Daftar ini akan terus
               saya kembangkan seiring bertambahnya pengalaman.
@@ -74,14 +122,19 @@ export default function Skills() {
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-3">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-cyan-400/10 hover:text-cyan-200"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                  {category.skills.map((skill) => {
+                    const Icon = skill.icon;
+
+                    return (
+                      <span
+                        key={skill.name}
+                        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-cyan-400/10 hover:text-cyan-200"
+                      >
+                        <Icon className="text-base text-cyan-300" />
+                        {skill.name}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </Reveal>
